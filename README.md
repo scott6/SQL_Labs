@@ -134,7 +134,7 @@ Try input:
 ' OR 1=1 --
 ```
 ```sql
-EXEC sp_Login_Unsecured @Username = ''' OR 1=1 --', @Passw0rd='';
+EXEC sp_Login_Unsecured @Username = ''' OR 1=1 --', @Password='';
 ```
 
 Observe:
@@ -151,7 +151,7 @@ Try input:
 ```sql
 EXEC sp_Login_Unsecured
     @Username = ''' OR 1=1; SELECT * FROM sys.tables --', 
-    @Passw0rd='';
+    @Password='';
 ```
 
 Observe:
