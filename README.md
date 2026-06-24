@@ -170,7 +170,7 @@ SQL Injection is not just for bypassing login — it can also be used to enumera
 
 ## Step 2: Use Stored Procedure with Parameterized Query
 ```sql
-EXEC sp_Login @Username = ''' OR 1=1 --', @Passw0rd='';
+EXEC sp_Login @Username = ''' OR 1=1 --', @Password='';
 ```
 
 Try injection again.
