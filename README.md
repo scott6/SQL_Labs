@@ -18,7 +18,7 @@
 2. Execute:
 ```sql
 SELECT * FROM Orders
-WHERE CustomerID = 500 AND Status = 'Completed';
+WHERE CustomerID = 500 AND Status = 'Waiting Approval';
 ```
 3. Observe:
    - Execution Plan: **Table Scan**
