@@ -143,6 +143,29 @@ Observe:
 👉 **Why:**
 String concatenation allows injection.
 
+Now Extend your attack to retrieve system information.
+Try input:
+```
+' UNION SELECT name, NULL FROM sys.tables --
+```
+```sql
+EXEC sp_Login_Unsecured
+    @Username = ''' UNION SELECT name, NULL FROM sys.tables --', 
+    @Passw0rd='';
+```
+
+Observe:
+Returns list of table names from sys.tables
+Output now includes database metadata instead of user data
+
+👉 **Why:**
+The injected UNION allows combining results from another query
+sys.tables is a system catalog view containing all table names
+Because the query is built via string concatenation, SQL Server executes both the original query and the injected one
+
+💡 **Learning Point:**
+SQL Injection is not just for bypassing login — it can also be used to enumerate database structure (tables, columns, metadata), which is often the first step in a real attack.
+
 ---
 
 ## Step 2: Use Stored Procedure with Parameterized Query
