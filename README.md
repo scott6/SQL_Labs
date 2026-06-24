@@ -30,9 +30,9 @@ Without indexes, SQL Server must scan all 1M rows → O(n) complexity.
 
 ---
 
-### Step 2: Add Clustered Index
+### Step 2: Add Non-Clustered Index
 ```sql
-CREATE CLUSTERED INDEX idx_orders_orderdate ON Orders(OrderDate);
+CREATE NONCLUSTERED INDEX idx_orders_orderdate ON Orders(OrderDate);
 ```
 
 Re-run query.
@@ -42,7 +42,7 @@ Observe:
 - Scan may still occur
 
 👉 **Why:**
-Clustered index helps with sorting/range queries, but not filtering by `CustomerID`.
+Clustered index helps with sorting/range queries, but not filtering by `OrderDate`.
 
 ---
 
