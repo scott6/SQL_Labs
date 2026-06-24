@@ -150,7 +150,7 @@ Try input:
 ```
 ```sql
 EXEC sp_Login_Unsecured
-    @Username = ''' UNION SELECT name, NULL FROM sys.tables --', 
+    @Username = ''' OR 1=1; SELECT * FROM sys.tables --', 
     @Passw0rd='';
 ```
 
