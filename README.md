@@ -108,8 +108,8 @@ Function on column makes query **non-sargable**.
 ## Step 2: Refactor Query
 ```sql
 SELECT * FROM Orders 
-WHERE OrderDate >= '2025-01-01' 
-AND OrderDate < '2026-01-01';
+WHERE OrderDate >= '2026-01-01' 
+AND OrderDate < '2027-01-01';
 ```
 
 Observe:
