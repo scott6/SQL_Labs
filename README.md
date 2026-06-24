@@ -206,11 +206,6 @@ Run multiple inserts.
 BACKUP DATABASE LabDB TO DISK = 'C:\Backup\LabDB_diff.bak' WITH DIFFERENTIAL;
 ```
 
-## Step 4: Automation
-- Configure SQL Agent
-- Full: Sunday 2 AM
-- Differential: Daily 2 AM
-
 ---
 
 ## ✅ Why This Matters
