@@ -94,7 +94,7 @@ All required columns exist in index → no additional table access.
 
 ## Step 1: Run Legacy Query
 ```sql
-SELECT * FROM Orders WHERE YEAR(OrderDate) = 2025;
+SELECT * FROM Orders WHERE YEAR(OrderDate) = 2026;
 ```
 
 Observe:
