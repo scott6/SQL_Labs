@@ -134,7 +134,7 @@ Try input:
 ' OR 1=1 --
 ```
 ```sql
-EXEC sp_Login_Unsecured @Username = ''' OR 1=1 --';
+EXEC sp_Login_Unsecured @Username = ''' OR 1=1 --', @Passw0rd='';
 ```
 
 Observe:
@@ -147,7 +147,7 @@ String concatenation allows injection.
 
 ## Step 2: Use Stored Procedure with Parameterized Query
 ```sql
-EXEC sp_Login @Username = 'admin';
+EXEC sp_Login @Username = ''' OR 1=1 --', @Passw0rd='';
 ```
 
 Try injection again.
