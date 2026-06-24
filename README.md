@@ -92,9 +92,17 @@ All required columns exist in index → no additional table access.
 
 # ✅ LAB 02: Query Optimization
 
-## Step 1: Run Legacy Query
+## Step 1: Add covering index for OrderDate 
+This index will be used for the legacy query on step 2
 ```sql
-SELECT * FROM Orders WHERE YEAR(OrderDate) = 2026;
+CREATE NONCLUSTERED INDEX idx_orders_orderdate2 ON Orders (OrderDate) 
+INCLUDE (CustomerID)
+```
+
+
+## Step 2: Run Legacy Query
+```sql
+SELECT CustomerID FROM Orders WHERE YEAR(OrderDate) = 2026;
 ```
 
 Observe:
@@ -105,9 +113,9 @@ Function on column makes query **non-sargable**.
 
 ---
 
-## Step 2: Refactor Query
+## Step 3: Refactor Query
 ```sql
-SELECT * FROM Orders 
+SELECT CustomerID FROM Orders 
 WHERE OrderDate >= '2026-01-01' 
 AND OrderDate < '2027-01-01';
 ```
